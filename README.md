@@ -8,18 +8,26 @@ to optionally support subscription and throw the `SubscribeSupportException` if 
 
 Another feature that is required is to enable a key-value pairs **Context** propagation bounded to a **Subscription**.
 
-## The Abstraction
+## Abstraction Overview
 
 This **Reactive Streams** extension to the [Reactive-Streams](https://github.com/reactive-streams/reactive-streams-jvm) includes:
 
-* `SubscribeSupport`: with its method `subscribe` serving as a **Producer** of items and taking a `SubscribeSupport.Subscriber`
-  instance as an argument. This is similar to the `Publisher` from the [Reactive-Streams](https://github.com/reactive-streams/reactive-streams-jvm),
-  except it allows throwing of a `SubscribeSupportException` if subscription is not supported by the implementation and
-  accepts additional bounded key-value pairs `Association` ([Elemental](https://github.com/MoodMinds/elemental)) context
-  which can be propagated to upstream item **Producers**.
-* `SubscribeSupport.Subscriber`: an items and other signals receiver from the `SubscribeSupport` (**Producer**) extending
-  the one from the [Reactive-Streams](https://github.com/reactive-streams/reactive-streams-jvm).
-* `SubscribeSupportException`: an exception indicating that asynchronous subscription inherently is not supported.
+`SubscribeSupport`
+
+With its method `subscribe` serving as a **Producer** of items and taking a `SubscribeSupport.Subscriber`
+instance as an argument, this component is similar to the `Publisher` from the [Reactive-Streams](https://github.com/reactive-streams/reactive-streams-jvm),
+except it allows throwing of a `SubscribeSupportException` if subscription is not supported by the implementation and
+accepts additional bounded key-value pairs `Association` ([Elemental](https://github.com/MoodMinds/elemental)) context
+which can be propagated to upstream item **Producers**.
+
+`SubscribeSupport.Subscriber`
+
+An items and other signals receiver from the `SubscribeSupport` (**Producer**) extending the one from the
+[Reactive-Streams](https://github.com/reactive-streams/reactive-streams-jvm).
+
+`SubscribeSupportException`
+
+An exception indicating that asynchronous subscription inherently is not supported.
 
 ## Getting Started
 
