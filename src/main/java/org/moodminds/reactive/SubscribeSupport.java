@@ -139,8 +139,8 @@ public interface SubscribeSupport<V, E extends Exception> {
          * Receive expected fault terminal state. No further events will
          * be sent even if {@link Subscription#request(long)} is invoked again.
          *
-         * @param e the exception signaled
+         * @param error the exception signaled
          */
-        void onFail(E e);
+        void onError(E error);
     }
 }
