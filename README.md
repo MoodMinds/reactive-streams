@@ -12,7 +12,7 @@ Another feature that is required is to enable a key-value pairs **Context** prop
 
 This **Reactive Streams** extension to the [Reactive-Streams](https://github.com/reactive-streams/reactive-streams-jvm) includes components:
 
-`SubscribeSupport`
+**`SubscribeSupport`**
 
 With its method `subscribe` serving as a **Producer** of items and taking a `SubscribeSupport.Subscriber`
 instance as an argument, this component is similar to the `Publisher` from the [Reactive-Streams](https://github.com/reactive-streams/reactive-streams-jvm),
@@ -20,12 +20,12 @@ except it allows throwing of a `SubscribeSupportException` if subscription is no
 accepts additional bounded key-value pairs `Association` ([Elemental](https://github.com/MoodMinds/elemental)) context
 which can be propagated to upstream item **Producers**.
 
-`SubscribeSupport.Subscriber`
+**`SubscribeSupport.Subscriber`**
 
 An items and other signals receiver from the `SubscribeSupport` (**Producer**) extending the one from the
 [Reactive-Streams](https://github.com/reactive-streams/reactive-streams-jvm).
 
-`SubscribeSupportException`
+**`SubscribeSupportException`**
 
 An exception indicating that asynchronous subscription inherently is not supported.
 
