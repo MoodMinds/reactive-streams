@@ -10,7 +10,7 @@ Another feature that is required is to enable a key-value pairs **Context** prop
 
 ## Abstraction Overview
 
-This **Reactive Streams** extension to the [Reactive-Streams](https://github.com/reactive-streams/reactive-streams-jvm) includes:
+This **Reactive Streams** extension to the [Reactive-Streams](https://github.com/reactive-streams/reactive-streams-jvm) includes components:
 
 `SubscribeSupport`
 
