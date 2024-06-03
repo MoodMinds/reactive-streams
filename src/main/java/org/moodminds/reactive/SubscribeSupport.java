@@ -13,7 +13,7 @@ import java.util.NoSuchElementException;
  * <p>
  * Each active {@link Subscriber} receives items via the {@link Subscriber#onNext(Object)} method in the same order,
  * with the possibility of encountering drops or errors. If an expected exception prevents the issuance of items to a
- * Subscriber, that Subscriber receives an {@link Subscriber#onFail(E)} message. If unexpected error occurs,
+ * Subscriber, that Subscriber receives an {@link Subscriber#onError(E)} message. If unexpected error occurs,
  * the {@link Subscriber#onError(Throwable)} is triggered. No further items will be received.
  * <p>
  * When it's certain that no more items will be issued, a Subscriber receives an {@link Subscriber#onComplete()}} message.
@@ -49,7 +49,7 @@ public interface SubscribeSupport<V, E extends Exception> {
     /**
      * Subscribe to this item Producer with the given {@link Subscriber}.
      * If already subscribed, or if the subscription attempt fails due to policy violations or exceptions, the Subscriber's
-     * {@link Subscriber#onFail(E)} or {@link Subscriber#onError(Throwable)} method is called with an {@link E}
+     * {@link Subscriber#onError(E)} or {@link Subscriber#onError(Throwable)} method is called with an {@link E}
      * or {@link Throwable}. Otherwise, the Subscriber's {@link Subscriber#onSubscribe(Subscription)} method is invoked
      * with a new {@link Subscription}.
      * <p>
@@ -67,7 +67,7 @@ public interface SubscribeSupport<V, E extends Exception> {
     /**
      * Subscribe to this item Producer with the given {@link Subscriber} and {@link KeyValue} varargs context.
      * If already subscribed, or if the subscription attempt fails due to policy violations or exceptions, the Subscriber's
-     * {@link Subscriber#onFail(E)} or {@link Subscriber#onError(Throwable)} method is called with an {@link E}
+     * {@link Subscriber#onError(E)} or {@link Subscriber#onError(Throwable)} method is called with an {@link E}
      * or {@link Throwable}. Otherwise, the Subscriber's {@link Subscriber#onSubscribe(Subscription)} method is invoked
      * with a new {@link Subscription}.
      * <p>
@@ -108,7 +108,7 @@ public interface SubscribeSupport<V, E extends Exception> {
     /**
      * Subscribe to this item Producer with the given {@link Subscriber} and {@link Association} context.
      * If already subscribed, or if the subscription attempt fails due to policy violations or exceptions, the Subscriber's
-     * {@link Subscriber#onFail(E)} or {@link Subscriber#onError(Throwable)} method is called with an {@link E}
+     * {@link Subscriber#onError(E)} or {@link Subscriber#onError(Throwable)} method is called with an {@link E}
      * or {@link Throwable}. Otherwise, the Subscriber's {@link Subscriber#onSubscribe(Subscription)} method is invoked
      * with a new {@link Subscription}.
      * <p>
