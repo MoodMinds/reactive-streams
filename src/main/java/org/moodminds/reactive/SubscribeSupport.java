@@ -103,7 +103,7 @@ public interface SubscribeSupport<V, E extends Exception> {
      * @throws NullPointerException if the given subscriber is {@code null} or context is {@code null}
      * @throws SubscribeSupportException if subscription is not supported
      */
-    void subscribe(org.reactivestreams.Subscriber<? super V> subscriber, Association<Object, Object, ?> ctx);
+    void subscribe(org.reactivestreams.Subscriber<? super V> subscriber, Association<?, ?, ?> ctx);
 
     /**
      * Subscribe to this item Producer with the given {@link Subscriber} and {@link Association} context.
@@ -124,7 +124,7 @@ public interface SubscribeSupport<V, E extends Exception> {
      * @throws NullPointerException if the given subscriber is {@code null} or context is {@code null}
      * @throws SubscribeSupportException if subscription is not supported
      */
-    void subscribe(Subscriber<? super V, ? super E> subscriber, Association<Object, Object, ?> ctx);
+    void subscribe(Subscriber<? super V, ? super E> subscriber, Association<?, ?, ?> ctx);
 
     /**
      * A message receiver from the {@link SubscribeSupport}. The methods in this
