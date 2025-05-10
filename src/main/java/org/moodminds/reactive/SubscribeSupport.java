@@ -61,7 +61,7 @@ public interface SubscribeSupport<V, E extends Exception> {
      * @throws SubscribeSupportException if subscription is not supported
      */
     default void subscribe(Subscriber<? super V, ? super E> subscriber) {
-        subscribe(subscriber, new KeyValue<?, ?>[] {});
+        subscribe(subscriber, new KeyValue<?, ?>[]{});
     }
 
     /**
